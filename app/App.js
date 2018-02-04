@@ -6,13 +6,19 @@
 
 import React, { Component } from 'react';
 
-import {View, Text} from "react-native";
-
 import Home from "./screens/Home";
 import Auth from "./screens/Auth";
 
 import { NativeRouter, Link } from 'react-router-native'
 import { Card, Navigation } from 'react-router-navigation'
+
+import DgNavBar from "./components/DgNavBar";
+
+const NavBar = () => {
+    return (
+        <DgNavBar/>
+    )
+};
 
 export default class App extends Component {
 
@@ -22,11 +28,13 @@ export default class App extends Component {
     }
   };
 
-
   render() {
     return (
         <NativeRouter>
-            <Navigation style={this.styles.bar}>
+            <Navigation
+                renderNavBar={NavBar}
+                style={this.styles.bar}
+                title="DataGrid">
                 <Card
                     exact
                     path="/"
@@ -34,6 +42,7 @@ export default class App extends Component {
                     backButtonTitle="Auth"
                 />
                 <Card
+                    exact
                     path="/app"
                     component={Home}
                 />

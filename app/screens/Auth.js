@@ -33,11 +33,9 @@ export default class Auth extends Component {
                                 <Label>Password</Label>
                                 <Input />
                             </Item>
-                            <View style={{margin: 20, backgroundColor: "blue", flexDirection: "row", alignItems: "stretch", justifyContent: "center"}}>
-                                <Button style={{width: "100%"}} onPress={this.goToApp.bind(this)} block>
-                                    <Text>Login</Text>
-                                </Button>
-                            </View>
+                            <Button style={{margin: 20}} onPress={this.goToApp.bind(this)} block>
+                                <Text>Login</Text>
+                            </Button>
                         </Form>
                     </View>
         );
