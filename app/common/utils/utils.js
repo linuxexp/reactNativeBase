@@ -17,6 +17,7 @@ export const injectState = (mapStateToProps, reducerKeyed) => {
 };
 
 export const transformJsToStore = (js, targetStore) => {
+    if (!js) return targetStore;
     // remove any reducers which were removed before & add new reducer if there are any
     const reducers = union(intersection(keys(js), keys(targetStore)), keys(targetStore));
     let immutableStore = {};
